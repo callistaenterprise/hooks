@@ -42,3 +42,15 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Hooks, trends, testing
+
+With the recent introduction of Hooks in React
+
+React still maintains a cuttin
+
+React is still evolving and adapting to meet market demands both in development and performance.  
+With the arrival of Hooks and Suspense it's still very much in the lead of innovation, with an aim to make and keep things simple, functional and declarative.
+In this presentation I'll take us through these techniques while also highlighting some of the current trends within the React Ecosytem.
+ 
+So what are Hooks, Suspense and the latest trends within test and development? 
