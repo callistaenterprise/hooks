@@ -12,3 +12,8 @@ export default [
   { id: "11", name: "andreas" },
   { id: "12", name: "per" }
 ];
+
+export interface IItem {
+  id: string;
+  name: string;
+}
