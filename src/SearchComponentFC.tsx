@@ -1,7 +1,39 @@
+import "symbol-observable";
 import React, { ChangeEvent } from "react";
-import { compose, withReducer, withHandlers, lifecycle } from "recompose";
+import {
+  compose,
+  withReducer,
+  withHandlers,
+  lifecycle,
+  setObservableConfig,
+  componentFromStream,
+  createEventHandler,
+  mapPropsStream,
+  withStateHandlers,
+  StateHandler,
+  StateHandlerMap,
+  pure
+} from "recompose";
+// import rxjsConfig from "recompose/rxjsObservableConfig";
+import { from, merge, combineLatest } from "rxjs";
+import {
+  map,
+  switchMap,
+  delay,
+  startWith,
+  combineAll,
+  tap,
+  scan,
+  mergeMap
+} from "rxjs/operators";
 import * as api from "./api";
 import { IItem } from "./list-mock";
+
+// ---- rxjs recompose
+setObservableConfig({
+  // @ts-ignore
+  fromESObservable: from
+});
 
 // ---- types
 interface IOuterProps {
@@ -14,7 +46,7 @@ interface ISearchState {
   loading: boolean;
   error?: string;
 }
-interface ISearchProps extends ISearchHandlers {
+interface ISearchProps extends ISearchHandlers, ISearchBar {
   searchState: ISearchState;
 }
 
@@ -94,19 +126,19 @@ interface ISearchReducerProps {
   searchState: ISearchState;
   dispatchSearch: (action: SearchActions) => void;
 }
+interface ISearchStateX {
+  searchTextX: string;
+}
+type ISearchStateHandlers = StateHandlerMap<ISearchStateX> & {
+  handleUpdateSearchText: StateHandler<ISearchStateX>;
+  handleResetSearchText: StateHandler<ISearchStateX>;
+};
 interface ISearchHandlers {
-  handleUpdateSearchText: (event: ChangeEvent<HTMLInputElement>) => void;
-  handleResetSearchText: () => void;
   handleRequestSearchList: (searchText: string) => void;
   handleSuccessSearchList: (list: IItem[]) => void;
   handleFailureSearchList: (error: string) => void;
 }
 const withSearchHandlers = withHandlers<ISearchReducerProps, ISearchHandlers>({
-  handleUpdateSearchText: ({ dispatchSearch }) => (
-    event: ChangeEvent<HTMLInputElement>
-  ) => dispatchSearch(updateSearchAction(event.target.value)),
-  handleResetSearchText: ({ dispatchSearch }) => () =>
-    dispatchSearch(updateSearchAction("")),
   handleRequestSearchList: ({ dispatchSearch }) => (searchText: string) =>
     dispatchSearch(requestSearchListAction(searchText)),
   handleSuccessSearchList: ({ dispatchSearch }) => (list: IItem[]) =>
@@ -115,6 +147,24 @@ const withSearchHandlers = withHandlers<ISearchReducerProps, ISearchHandlers>({
     dispatchSearch(failureSearchListAction(error))
 });
 
+const withSearchStateHandlers = withStateHandlers<
+  ISearchStateX,
+  ISearchStateHandlers
+>(
+  // @ts-ignore
+  { searchTextX: "" },
+  {
+    handleUpdateSearchText: state => (searchTextX: string) =>
+      state.searchTextX !== searchTextX
+        ? {
+            searchTextX
+          }
+        : state,
+    handleResetSearchText: () => () => ({
+      searchTextX: ""
+    })
+  }
+);
 // ---- lifecylce
 const withRequestSearch = lifecycle({
   componentDidUpdate(prevProps: Readonly<ISearchProps>): void {
@@ -129,39 +179,166 @@ const withRequestSearch = lifecycle({
   }
 });
 
+// ---- streams
+
 // ---- component
+interface ISearchList {
+  list: IItem[];
+}
+const SearchList = (props: ISearchList) => (
+  <ul data-testid="search-list-ul">
+    {props.list &&
+      props.list.map((item: IItem) => (
+        <li key={`item-key-${item.id}`} data-testid={`item-${item.id}`}>
+          {item.name}
+        </li>
+      ))}
+  </ul>
+);
+interface ISearchBar$ {
+  loading: boolean;
+  handleResetSearchText: () => void;
+  handleUpdateSearchText: (searchText: string) => void;
+}
+interface ISearchBar {
+  loading: boolean;
+  searchText: string;
+  searchTextDelayed: string;
+  onInput: () => void;
+  onReset: () => void;
+}
+const SearchBar = ({
+  searchText,
+  searchTextDelayed,
+  onInput,
+  loading,
+  onReset
+}: ISearchBar) => {
+  console.log("----- props", { searchText, onReset });
+  return (
+    <div data-testid="search-bar">
+      <input
+        data-testid="search-bar-input"
+        placeholder={"Search"}
+        onInput={onInput}
+      />
+      <span>{searchTextDelayed}</span>
+      {loading ? (
+        <div data-testid="loading-icon">loading</div>
+      ) : (
+        <div data-testid="reset-icon" onClick={onReset}>
+          reset
+        </div>
+      )}
+    </div>
+  );
+};
+
+const searchInput$ = mapPropsStream(props$ => {
+  const { stream: onInput$, handler: onInput } = createEventHandler();
+
+  const textDelay$ = onInput$.pipe(
+    map((e: ChangeEvent<HTMLInputElement>) => e.target.value),
+    delay(500),
+    startWith("")
+  );
+  const text$ = onInput$.pipe(
+    map((e: ChangeEvent<HTMLInputElement>) => e.target.value),
+    startWith("")
+  );
+
+  // const { stream: onReset$, handler: onReset } = createEventHandler();
+  console.log("----- searchInput");
+  // @ts-ignore
+  return props$.pipe(
+    switchMap(
+      // @ts-ignore
+      (props: ISearchBar$) =>
+        combineLatest([text$, textDelay$]).pipe(
+          map(([searchText, searchTextDelayed]) => ({
+            searchText,
+            searchTextDelayed
+          })),
+
+          tap((p: any) => {
+            console.log("---- search text tap", { ...p });
+            props.handleUpdateSearchText(p.searchText);
+          })
+        ),
+      (props: ISearchBar$, { searchText, searchTextDelayed }) => {
+        console.log("---- mps", { props, searchText, searchTextDelayed });
+        return {
+          ...props,
+          searchText,
+          searchTextDelayed,
+          onInput
+        };
+      }
+    )
+  );
+  //   v => v
+});
+const resetSearchText$ = mapPropsStream(props$ => {
+  const { stream: onReset$, handler: onReset } = createEventHandler();
+  // @ts-ignore
+  return props$.pipe(
+    switchMap((props: ISearchBar$) =>
+      onReset$.pipe(map(() => props.handleResetSearchText()))
+    )
+  );
+});
+
+// const SearchBar$ = componentFromStream<ISearchBar$>(props$ => {
+//   const { stream: onInput$, handler: onInput } = createEventHandler();
+//   const text$ = onInput$.pipe(
+//     map((e: ChangeEvent<HTMLInputElement>) => e.target.value),
+//     delay(500),
+//     startWith("")
+//   );
+//   const { stream: onReset$, handler: onReset } = createEventHandler();
+//
+//   // @ts-ignore
+//   return props$.pipe(
+//     switchMap<ISearchBar, ISearchBar$>((props: ISearchBar) =>
+//       merge(
+//         text$.pipe(
+//           map((text: string) => {
+//             return { ...props, searchText: text };
+//           })
+//         ),
+//         onReset$.pipe(tap(c => console.log("---- reset clicked", c)))
+//       ).pipe(
+//         map(p => {
+//           console.log("--- mapping p", p);
+//           return { ...props, ...p, onInput, onReset };
+//         }),
+//         tap(c => console.log("-- tap props", c)),
+//         // @ts-ignore
+//         map(SearchBar)
+//       )
+//     )
+//   );
 const SearchComponent: React.FC<ISearchProps> = props => {
-  const { searchText, list, loading } = props.searchState;
-  const { handleUpdateSearchText, handleResetSearchText } = props;
+  const { list, loading } = props.searchState;
+  const {
+    onInput,
+    searchText,
+    searchTextDelayed,
+    // @ts-ignore
+    handleResetSearchText
+  } = props;
+  console.log("---- searchState", props);
   return (
     <div data-testid="search-container">
-      <div data-testid="search-bar">
-        <input
-          data-testid="search-bar-input"
-          placeholder={"Search"}
-          value={searchText}
-          onChange={handleUpdateSearchText}
-        />
-        {loading ? (
-          <div data-testid="loading-icon">loading</div>
-        ) : (
-          <div data-testid="reset-icon" onClick={handleResetSearchText}>
-            reset
-          </div>
-        )}
-      </div>
-      <div data-testid="search-list">
-        search list
-        <ul data-testid="search-list-ul">
-          {list &&
-            list.map((item: IItem) => (
-              <li key={`item-key-${item.id}`} data-testid={`item-${item.id}`}>
-                {item.name}
-              </li>
-            ))}
-        </ul>
-      </div>
-      Search Container
+      <h2>Search Container</h2>
+      <SearchBar
+        onInput={onInput}
+        searchText={searchText}
+        searchTextDelayed={searchTextDelayed}
+        onReset={handleResetSearchText}
+        loading={loading}
+      />
+      <SearchList list={list} />
     </div>
   );
 };
@@ -169,5 +346,9 @@ const SearchComponent: React.FC<ISearchProps> = props => {
 export default compose<ISearchProps, IOuterProps>(
   withSearchReducer,
   withSearchHandlers,
-  withRequestSearch
+  withSearchStateHandlers,
+  pure,
+  // withRequestSearch,
+  searchInput$
+  // resetSearchText$
 )(SearchComponent);
