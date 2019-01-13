@@ -1,21 +1,25 @@
 import React from "react";
-import SearchComponent from "./SearchComponentFC";
+// import UseReducer_1 from "./UseReducer_1";
+// import UseReducer_2 from "./UseReducer_2";
+// import UseReducer_3 from "./UseReducer_3";
+// import UseReducer_4 from "./UseReducer_4";
+import UseReducer_5 from "./UseReducer_5";
 import { render, cleanup, fireEvent, wait } from "react-testing-library";
 import "jest-dom/extend-expect";
 
-jest.mock("./api", () => ({
+const SearchComponent = UseReducer_5;
+jest.mock("../api", () => ({
   search: jest.fn(searchText =>
     Promise.resolve(searchText ? [{ id: "1", name: "testuser" }] : [])
   )
 }));
-describe("<SearchComponent>", () => {
+describe("SearchComponent Refactor", () => {
   // automatically unmount and cleanup DOM after the test is finished.
   afterEach(cleanup);
   describe("rendering", () => {
     it("render", () => {
-      const { getByText, getByTestId } = render(<SearchComponent />);
+      const { getByTestId } = render(<SearchComponent />);
       expect(getByTestId("search-container")).not.toBeUndefined();
-      expect(getByText("Search Container")).not.toBeUndefined();
     });
   });
   describe("Search bar", () => {
@@ -40,6 +44,7 @@ describe("<SearchComponent>", () => {
         const searchBarInput = getByTestId(
           "search-bar-input"
         ) as HTMLInputElement;
+        console.log("##################### fire event");
         fireEvent.change(searchBarInput, { target: { value: "testuser" } });
         expect(searchBarInput.value).toEqual("testuser");
         await wait(() =>

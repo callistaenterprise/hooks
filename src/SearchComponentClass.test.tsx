@@ -1,5 +1,5 @@
 import React from "react";
-import SearchComponent from "./SearchComponent";
+import SearchComponent from "./SearchComponentClass";
 import { render, cleanup, fireEvent, wait } from "react-testing-library";
 import "jest-dom/extend-expect";
 
@@ -13,9 +13,8 @@ describe("<SearchComponent>", () => {
   afterEach(cleanup);
   describe("rendering", () => {
     it("render", () => {
-      const { getByText, getByTestId } = render(<SearchComponent />);
+      const { getByTestId } = render(<SearchComponent />);
       expect(getByTestId("search-container")).not.toBeUndefined();
-      expect(getByText("Search Container")).not.toBeUndefined();
     });
   });
   describe("Search bar", () => {

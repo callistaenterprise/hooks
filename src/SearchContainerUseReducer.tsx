@@ -57,11 +57,11 @@ const searchReducer = (state: ISearchState, action: Actions) => {
   console.log(action.payload);
   switch (action.type) {
     case ActionTypes.UPDATE_SEARCH_TEXT:
-      return { ...state, ...action.payload};
+      return { ...state, ...action.payload };
     case ActionTypes.LOADING:
       return { ...state, ...action.payload };
     case ActionTypes.UPDATE_LIST:
-      return { ...state, ...action.payload};
+      return { ...state, ...action.payload };
     default:
       return state;
   }
@@ -72,37 +72,39 @@ const _filterList = (searchText: string, list: IListItem[]) =>
     ({ name }) => name.toLowerCase().indexOf(searchText.toLowerCase()) >= 0
   );
 
-type Dispatch<A> = (value: A) => void
+type Dispatch<A> = (value: A) => void;
 
+// ---------------- Use Functions
+const useListFilter = (state: ISearchState, dispatch: Dispatch<Actions>) =>
+  useEffect(
+    () => {
+      const t = setTimeout(
+        () =>
+          dispatch({
+            type: ActionTypes.UPDATE_LIST,
+            payload: { list: _filterList(state.searchText, _list) }
+          }),
+        1000
+      );
+      return () => {
+        clearTimeout(t);
+      };
+    },
+    [state.searchText]
+  );
 
-// ---------------- User Functions
-const useListFilter = (state:ISearchState, dispatch: Dispatch<Actions>) => useEffect(
-  () => {
-    const t = setTimeout(
-      () =>
-        dispatch({
-          type: ActionTypes.UPDATE_LIST,
-          payload: { list: _filterList(state.searchText, _list) }
-        }),
-      1000
-    );
-    return () => {
-      clearTimeout(t);
-    };
-  },
-  [state.searchText]
-);
-
-
-const useSearchTextChange = (state:ISearchState, dispatch: Dispatch<Actions>) => useEffect(
+const useSearchTextChange = (
+  state: ISearchState,
+  dispatch: Dispatch<Actions>
+) =>
+  useEffect(
     () => {
       dispatch(_actionLoading({ loading: true }));
     },
     [state.searchText]
   );
 
-
-const useListChange = (state:ISearchState, dispatch: Dispatch<Actions>) =>
+const useListChange = (state: ISearchState, dispatch: Dispatch<Actions>) =>
   useEffect(
     () => {
       dispatch(_actionLoading({ loading: false }));
@@ -116,7 +118,11 @@ const SearchContainer = () => {
   useListChange(state, dispatch);
 
   const updateSearchText: ISearchBar["updateSearchText"] = e =>
-    dispatch(_actionUpdateSearchText({ searchText: (e.target as HTMLInputElement).value }));
+    dispatch(
+      _actionUpdateSearchText({
+        searchText: (e.target as HTMLInputElement).value
+      })
+    );
 
   return (
     <SearchWrapper

@@ -2,16 +2,17 @@ import React, { Component } from "react";
 // @ts-ignore
 import "./App.css";
 import RootStateProvider from "./RootStateProvider";
-// import SearchUseContext from "./UseContext";
-// import SearchUseContextPropsDown from "./UseContextPropsDown";
-// import SearchContainerUseState from "./SearchContainerUseState";
-import SearchComponentFC from "./SearchComponentFC";
+import SearchContainerUseContext from "./SearchContainerUseContext";
+import SearchComponentHooks from "./SearchContainerHooks";
+import SearchComponentClass from "./SearchComponentClass";
 class App extends Component {
   render() {
     return (
       <RootStateProvider>
         <div className="App">
-          <SearchComponentFC />
+          <SearchComponentClass/>
+          <SearchComponentHooks />
+          <SearchContainerUseContext />
         </div>
       </RootStateProvider>
     );

@@ -8,13 +8,17 @@ const _filterList = (searchText: string, list: IListItem[]) =>
   );
 
 interface ISearchTextChange {
-  searchText: string,
-  setLoading: (loading:boolean) => void,
-  setList: (list:IListItem[]) => void,
+  searchText: string;
+  setLoading: (loading: boolean) => void;
+  setList: (list: IListItem[]) => void;
 }
 
 // ----------- the hook
-const useSearchTextChange = ({searchText, setLoading, setList}: ISearchTextChange) =>
+const useSearchTextChange = ({
+  searchText,
+  setLoading,
+  setList
+}: ISearchTextChange) =>
   useEffect(
     () => {
       setLoading(true);
@@ -35,7 +39,7 @@ const SearchContainer = () => {
   const [searchText, setSearchText] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  useSearchTextChange({searchText,setList, setLoading});
+  useSearchTextChange({ searchText, setList, setLoading });
 
   const updateSearchText: ISearchBar["updateSearchText"] = e =>
     setSearchText((e.target as HTMLInputElement).value);
@@ -52,3 +56,44 @@ const SearchContainer = () => {
 };
 
 export default SearchContainer;
+
+const Donut = ({ sparkles, handleEat }) => (
+  <div onClick={handleEat}>
+    Sparkles on
+    {sparkles.map(sparkle => (
+      <div>{sparkle}</div>
+    ))}
+    Donut!
+  </div>
+);
+
+const SprinkledDonut = () => {
+  const [sparkles, setSparkles] = useState([]);
+  useEffect(() => api.fetchSparkles.then(sparkles => setSparkles(sparkles)));
+  const eatSparkles = () => setSparkles("");
+  return <Donut sprinkles={sprinkles} handleEat={handleEat} />;
+};
+
+const SprinkledDonut = compose(
+  withFetchSparkles,
+  withEat
+)(Donut);
+
+class DonutRP extends Component {
+  handleEat: () => {};
+  componentDidMount() {
+    fetchSparkles.then(sparkles => setState({ sparkles }));
+  }
+  render() {
+    const { children, sparkles } = this.props;
+    return children({ sparkles, handleEat: this.handleEat });
+  }
+}
+
+const WrappedDonut = props => (
+  <DonutRP>
+    {({ sparkles, handleEat }) => (
+      <Donut sparkles={sparkles} handleEat={handleEat} />
+    )}
+  </DonutRP>
+);

@@ -5,7 +5,9 @@
 }
 
 .Search {
-  flex: 1;
+  display:flex;
+  flex:1;
+  flex-direction: column;
   background-color: white;
   margin: 5px;
   padding: 20px;
@@ -14,7 +16,32 @@
   border-style: solid;
   border-color: grey;
 }
+.SearchContainer {
+  display:flex;
+  align-items: center;
+  background-color: white;
+  padding: 5px;
+  border-radius:5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: orange;
+}
+.SearchInput{
+  flex: 1;
+  background-color: white;
+  padding: 5px;
+  border-radius:5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: orange;
+}
 
+.SearchIndicator{
+  margin: 6px
+}
+.SearchClear{
+  margin: 4px
+}
 .App-logo {
   animation: App-logo-spin infinite 2s linear;
   height: 30px;
