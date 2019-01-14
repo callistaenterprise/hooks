@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import RootStateProvider from "./RootStateProvider";
 import SearchContainerUseContext from "./SearchContainerUseContext";
+import SearchContainerUseContextSuspense from "./SearchContainerUseContextSuspense";
 import SearchComponentHooks from "./SearchContainerHooks";
 import SearchComponentClass from "./SearchComponentClass";
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
           <SearchComponentClass/>
           <SearchComponentHooks />
           <SearchContainerUseContext />
+          <SearchContainerUseContextSuspense/>
         </div>
       </RootStateProvider>
     );

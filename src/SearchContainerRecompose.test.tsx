@@ -8,7 +8,7 @@ jest.mock("./api", () => ({
     Promise.resolve(searchText ? [{ id: "1", name: "testuser" }] : [])
   )
 }));
-describe("<SearchComponent Recompose>", () => {
+describe.skip("<SearchComponent Recompose>", () => {
   // automatically unmount and cleanup DOM after the test is finished.
   afterEach(cleanup);
   describe("rendering", () => {

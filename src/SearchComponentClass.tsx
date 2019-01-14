@@ -10,36 +10,51 @@ interface IProps {
 interface IState {
   searchText: string;
   list: IItem[];
+  loading: boolean;
+  error?: string;
 }
 
 class SearchComponentClass extends React.Component<IProps, IState> {
-  state = {
-    searchText: "",
-    list: []
-  };
+  // --- state
+  constructor(props: IProps) {
+    super(props);
+    this.state = {
+      searchText: "",
+      list: [],
+      loading: !!props.loading,
+      error: undefined
+    };
+  }
+
+  // --- behaviour
   handleUpdateSearchText = (event: ChangeEvent<HTMLInputElement>) => {
     this.setState({ searchText: event.target.value });
   };
   handleResetSearchText = () => {
     this.setState({ searchText: "" });
   };
+
+  // --- lifecycle, side effects
   componentDidMount(): void {
-    api.search(this.state.searchText).then(list => this.setState({ list }));
+    this.setState({ loading: true });
+    api
+      .search(this.state.searchText)
+      .then(list => this.setState({ list, loading: false }));
   }
   componentDidUpdate(
     prevProps: Readonly<IProps>,
-    prevState: Readonly<IState>,
-    snapshot?: any
+    prevState: Readonly<IState>
   ): void {
     if (prevState.searchText !== this.state.searchText) {
-      api.search(this.state.searchText).then(list => this.setState({ list }));
+      this.props.loading !== undefined && this.setState({ loading: true });
+      api
+        .search(this.state.searchText)
+        .then(list => this.setState({ list, loading: false }));
     }
   }
 
   render() {
-    const { loading = false } = this.props;
-    const { searchText, list } = this.state;
-
+    const { searchText, list, loading } = this.state;
     return (
       <SearchComponent
         title={"Search Class"}

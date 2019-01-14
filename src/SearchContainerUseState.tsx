@@ -57,43 +57,43 @@ const SearchContainer = () => {
 
 export default SearchContainer;
 
-const Donut = ({ sparkles, handleEat }) => (
-  <div onClick={handleEat}>
-    Sparkles on
-    {sparkles.map(sparkle => (
-      <div>{sparkle}</div>
-    ))}
-    Donut!
-  </div>
-);
-
-const SprinkledDonut = () => {
-  const [sparkles, setSparkles] = useState([]);
-  useEffect(() => api.fetchSparkles.then(sparkles => setSparkles(sparkles)));
-  const eatSparkles = () => setSparkles("");
-  return <Donut sprinkles={sprinkles} handleEat={handleEat} />;
-};
-
-const SprinkledDonut = compose(
-  withFetchSparkles,
-  withEat
-)(Donut);
-
-class DonutRP extends Component {
-  handleEat: () => {};
-  componentDidMount() {
-    fetchSparkles.then(sparkles => setState({ sparkles }));
-  }
-  render() {
-    const { children, sparkles } = this.props;
-    return children({ sparkles, handleEat: this.handleEat });
-  }
-}
-
-const WrappedDonut = props => (
-  <DonutRP>
-    {({ sparkles, handleEat }) => (
-      <Donut sparkles={sparkles} handleEat={handleEat} />
-    )}
-  </DonutRP>
-);
+// const Donut = ({ sparkles, handleEat }) => (
+//   <div onClick={handleEat}>
+//     Sparkles on
+//     {sparkles.map(sparkle => (
+//       <div>{sparkle}</div>
+//     ))}
+//     Donut!
+//   </div>
+// );
+//
+// const SprinkledDonut = () => {
+//   const [sparkles, setSparkles] = useState([]);
+//   useEffect(() => api.fetchSparkles.then(sparkles => setSparkles(sparkles)));
+//   const eatSparkles = () => setSparkles("");
+//   return <Donut sprinkles={sprinkles} handleEat={handleEat} />;
+// };
+//
+// const SprinkledDonut = compose(
+//   withFetchSparkles,
+//   withEat
+// )(Donut);
+//
+// class DonutRP extends Component {
+//   handleEat: () => {};
+//   componentDidMount() {
+//     fetchSparkles.then(sparkles => setState({ sparkles }));
+//   }
+//   render() {
+//     const { children, sparkles } = this.props;
+//     return children({ sparkles, handleEat: this.handleEat });
+//   }
+// }
+//
+// const WrappedDonut = props => (
+//   <DonutRP>
+//     {({ sparkles, handleEat }) => (
+//       <Donut sparkles={sparkles} handleEat={handleEat} />
+//     )}
+//   </DonutRP>
+// );

@@ -1,8 +1,6 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React from "react";
 import SearchComponent from "../SearchComponent";
-import { ISearchProps, ISearchState } from "../reducer";
-import * as api from "../api";
-import { IItem } from "../list-mock";
+import { ISearchProps } from "../reducer";
 import { useSearchReducer, useSearchRequest } from "../search-hooks";
 // ---- useReducer
 /*
@@ -19,7 +17,6 @@ with a dispatch method. (If you’re familiar with Redux, you already know how t
 // ---- component
 
 const SearchContainerHooks: React.FC<ISearchProps> = props => {
-  console.log("***********************");
   // --- hooks
   const { state, actions } = useSearchReducer(props);
   // --- side effect

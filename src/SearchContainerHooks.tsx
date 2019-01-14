@@ -12,7 +12,9 @@ const SearchContainerHooks: React.FC<ISearchProps> = props => {
   // --- side effect
   useSearchRequest(state, actions);
 
-  return <SearchComponent title={"Search Use Hooks"} {...state} {...actions} />;
+  return (
+    <SearchComponent title={"Search Use Reducer"} {...state} {...actions} />
+  );
 };
 
 export default SearchContainerHooks;

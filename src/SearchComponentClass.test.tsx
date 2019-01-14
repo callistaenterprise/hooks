@@ -8,6 +8,30 @@ jest.mock("./api", () => ({
     Promise.resolve(searchText ? [{ id: "1", name: "testuser" }] : [])
   )
 }));
+
+const mockCdm = () => {
+  const componentDidMount = SearchComponent.prototype.componentDidMount;
+  SearchComponent.prototype.componentDidMount = function() {
+    // componentDidMount();
+  };
+  const componentDidUpdate = SearchComponent.prototype.componentDidUpdate;
+  SearchComponent.prototype.componentDidUpdate = function() {
+    // componentDidMount();
+  };
+  return { componentDidMount, componentDidUpdate };
+};
+
+const resetLifecyles = ({
+  componentDidMount,
+  componentDidUpdate
+}: {
+  componentDidMount: () => void;
+  componentDidUpdate: (prevProps: any, prevState: any) => void;
+}) => {
+  SearchComponent.prototype.componentDidMount = componentDidMount;
+  SearchComponent.prototype.componentDidUpdate = componentDidUpdate;
+};
+
 describe("<SearchComponent>", () => {
   // automatically unmount and cleanup DOM after the test is finished.
   afterEach(cleanup);
@@ -52,20 +76,25 @@ describe("<SearchComponent>", () => {
         expect(getByTestId("loading-icon")).not.toBeUndefined();
       });
       it("it hides when loading is false", () => {
+        const lifecycles = mockCdm();
         const { queryByTestId } = render(<SearchComponent loading={false} />);
         expect(queryByTestId("loading-icon")).toBeNull();
+        resetLifecyles(lifecycles);
       });
     });
     describe("Reset", () => {
       it("shows when not loading", () => {
+        const lifecycles = mockCdm();
         const { getByTestId } = render(<SearchComponent loading={false} />);
         expect(getByTestId("reset-icon")).not.toBeUndefined();
+        resetLifecyles(lifecycles);
       });
       it("it hides when loading is true", () => {
         const { queryByTestId } = render(<SearchComponent loading={true} />);
         expect(queryByTestId("reset-icon")).toBeNull();
       });
       it("reset text", async () => {
+        const lifecycles = mockCdm();
         const { getByTestId, queryByTestId } = render(<SearchComponent />);
         const searchBarInput = getByTestId(
           "search-bar-input"
@@ -76,6 +105,8 @@ describe("<SearchComponent>", () => {
         fireEvent.click(resetSearchText);
         expect(searchBarInput.value).toEqual("");
         await wait(() => expect(queryByTestId("item-1")).toBeNull());
+
+        resetLifecyles(lifecycles);
       });
     });
   });

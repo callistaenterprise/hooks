@@ -8,7 +8,7 @@ jest.mock("./api", () => ({
     Promise.resolve(searchText ? [{ id: "1", name: "testuser" }] : [])
   )
 }));
-describe("<SearchComponent Hooks>", () => {
+describe.skip("<SearchComponent Hooks>", () => {
   // automatically unmount and cleanup DOM after the test is finished.
   afterEach(cleanup);
   describe("rendering", () => {

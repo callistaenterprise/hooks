@@ -65,10 +65,9 @@ const mapStateToHandlers = ({
 };
 
 const SearchContainerHooks: React.FC<ISearchProps> = props => {
-  console.log("***********************");
   // use useState
   const [loading, setLoading] = useState<ISearchState["loading"]>(
-    props.loading
+    props.loading === undefined ? false : props.loading
   );
   const [list, setList] = useState<ISearchState["list"]>([]);
   const [searchText, setSearchText] = useState<ISearchState["searchText"]>("");
@@ -89,15 +88,12 @@ const SearchContainerHooks: React.FC<ISearchProps> = props => {
       api
         .search(searchText)
         .then(list => {
-          console.log("------ after api list", list);
           handlers.handleSuccessSearchList(list);
         })
         .catch(error => handlers.handleFailureSearchList(error));
     },
     [searchText]
   );
-  console.log("**************** searchText", searchText);
-  console.log("----------------------------------------------");
   // use useState
   return (
     <SearchComponent

@@ -85,11 +85,12 @@ interface ISearchListProps {
 export const SearchList: React.FC<ISearchListProps> = ({ list }) => (
   <div data-testid="search-list">
     <ul data-testid="search-list-ul">
-      {list.map(({ id, name }) => (
-        <li key={`item-key-${id}`} data-testid={`item-${id}`}>
-          {name}
-        </li>
-      ))}
+      {list &&
+        list.map(({ id, name }) => (
+          <li key={`item-key-${id}`} data-testid={`item-${id}`}>
+            {name}
+          </li>
+        ))}
     </ul>
   </div>
 );

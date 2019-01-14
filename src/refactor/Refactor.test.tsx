@@ -1,13 +1,8 @@
 import React from "react";
-// import UseReducer_1 from "./UseReducer_1";
-// import UseReducer_2 from "./UseReducer_2";
-// import UseReducer_3 from "./UseReducer_3";
-// import UseReducer_4 from "./UseReducer_4";
-import UseReducer_5 from "./UseReducer_5";
+import SearchComponent from "./UseReducer_5";
 import { render, cleanup, fireEvent, wait } from "react-testing-library";
 import "jest-dom/extend-expect";
 
-const SearchComponent = UseReducer_5;
 jest.mock("../api", () => ({
   search: jest.fn(searchText =>
     Promise.resolve(searchText ? [{ id: "1", name: "testuser" }] : [])
@@ -39,12 +34,12 @@ describe("SearchComponent Refactor", () => {
           "Search"
         );
       });
-      it("change text", async () => {
+      it("SIDE EFFECT - change text", async () => {
         const { getByTestId } = render(<SearchComponent />);
         const searchBarInput = getByTestId(
           "search-bar-input"
         ) as HTMLInputElement;
-        console.log("##################### fire event");
+        console.log("##################### fire event - cause a side effect!");
         fireEvent.change(searchBarInput, { target: { value: "testuser" } });
         expect(searchBarInput.value).toEqual("testuser");
         await wait(() =>

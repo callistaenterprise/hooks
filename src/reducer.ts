@@ -34,9 +34,9 @@ const bindActions = (actions: Record<string, Function>, dispatch: Function) =>
   );
 
 export interface ISearchState {
-  searchText?: string;
-  list?: IItem[];
-  loading?: boolean;
+  searchText: string;
+  list: IItem[];
+  loading: boolean;
   error?: string;
 }
 export interface ISearchProps {
@@ -94,7 +94,6 @@ const failureSearchListAction = (error: string): IFailureSearchList => ({
 
 // ---- state
 export const searchReducer = (state: ISearchState, action: SearchActions) => {
-  console.log("---- searchReducer action", action);
   switch (action.type) {
     case ESearchActions.UPDATE_SEARCH_TEXT:
       state = { ...state, ...action.payload };
