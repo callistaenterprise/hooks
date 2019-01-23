@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // @ts-ignore
 import MaterialIcon from "material-icons-react";
 // @ts-ignore
 import MDSpinner from "react-md-spinner";
 import { ISearchHandlers } from "./reducer";
 import { userSearchContext } from "./search-hooks";
+import PropFlash from "./PropFlash";
 
 interface ILoadingProps {
   loading: boolean;
@@ -13,26 +14,30 @@ interface ILoadingProps {
 export const Loading: React.FC<ILoadingProps> = ({
   loading,
   handleResetSearchText
-}) =>
-  loading ? (
-    <span data-testid="loading-icon" className={"SearchIndicator"}>
-      <MDSpinner singleColor={"grey"} size={18} />
-    </span>
-  ) : (
-    <span
-      data-testid="reset-icon"
-      onClick={handleResetSearchText}
-      className={"SearchClear"}
-    >
-      <MaterialIcon icon={"clear"} />
-    </span>
-  );
+}) => (
+  <PropFlash prop={loading}>
+    {loading ? (
+      <div data-testid="loading-icon" className={"SearchIndicator"}>
+        <MDSpinner singleColor={"grey"} size={18} />
+      </div>
+    ) : (
+      <div
+        data-testid="reset-icon"
+        onClick={handleResetSearchText}
+        className={"SearchClear"}
+      >
+        <MaterialIcon icon={"clear"} />
+      </div>
+    )}
+  </PropFlash>
+);
 
 export const LoadingContainer = () => {
   const {
     actions,
     state: { loading }
   } = userSearchContext();
+  console.log("--- flash state", loading);
   return (
     <Loading
       loading={loading}

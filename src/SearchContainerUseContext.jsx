@@ -1,5 +1,6 @@
 import React from "react";
-import { SearchBarContainer, SearchListContainer } from "./SearchComponent";
+import SearchBarContainer from "./SearchBarContainer";
+import SearchListContainer from "./SearchListContainer";
 export const SearchContainerUseContext = () => (
   <div className={"Search"}>
     <h2>Search Use Context</h2>

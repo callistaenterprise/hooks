@@ -12,7 +12,7 @@ class App extends Component {
       <RootStateProvider>
         <div className="App">
           <SearchComponentClass/>
-          <SearchComponentHooks />
+          <SearchComponentHooks x/>
           <SearchContainerUseContext />
           <SearchContainerUseContextSuspense/>
         </div>

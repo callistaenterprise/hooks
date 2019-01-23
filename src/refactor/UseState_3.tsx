@@ -30,6 +30,7 @@ const mapStateToHandlers = (
   handleResetSearchText: () =>
     setSearchState({ ...searchState, searchText: "" })
 });
+
 const SearchContainerHooks: React.FC<ISearchProps> = props => {
   const [searchState, setSearchState] = useState<ISearchState>(
     initialState(props)

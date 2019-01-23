@@ -57,7 +57,7 @@ class SearchComponentClass extends React.Component<IProps, IState> {
     const { searchText, list, loading } = this.state;
     return (
       <SearchComponent
-        title={"Search Class"}
+        title={"Phil's-osophies Component"}
         loading={loading}
         searchText={searchText}
         list={list}

@@ -3,8 +3,8 @@ import React from "react";
 import MaterialIcon from "material-icons-react";
 // @ts-ignore
 import MDSpinner from "react-md-spinner";
-import { userSearchContext } from "./search-hooks";
 import { ISearchHandlers, ISearchState, ISearchTextHandlers } from "./reducer";
+import PropFlash from "./PropFlash";
 
 // ---------------------------- Loading
 interface ILoadingProps {
@@ -14,33 +14,23 @@ interface ILoadingProps {
 export const Loading: React.FC<ILoadingProps> = ({
   loading,
   handleResetSearchText
-}) =>
-  loading ? (
-    <span data-testid="loading-icon" className={"SearchIndicator"}>
-      <MDSpinner singleColor={"grey"} size={18} />
-    </span>
-  ) : (
-    <span
-      data-testid="reset-icon"
-      onClick={handleResetSearchText}
-      className={"SearchClear"}
-    >
-      <MaterialIcon icon={"clear"} />
-    </span>
-  );
-
-export const LoadingContainer = () => {
-  const {
-    actions,
-    state: { loading }
-  } = userSearchContext();
-  return (
-    <Loading
-      loading={loading}
-      handleResetSearchText={actions.handleResetSearchText}
-    />
-  );
-};
+}) => (
+  <PropFlash prop={loading}>
+    {loading ? (
+      <span data-testid="loading-icon" className={"SearchIndicator"}>
+        <MDSpinner singleColor={"grey"} size={18} />
+      </span>
+    ) : (
+      <span
+        data-testid="reset-icon"
+        onClick={handleResetSearchText}
+        className={"SearchClear"}
+      >
+        <MaterialIcon icon={"clear"} />
+      </span>
+    )}
+  </PropFlash>
+);
 
 // ---------------------------- SearchBar
 interface ISearchBarProps {
@@ -66,18 +56,6 @@ export const SearchBar: React.FC<ISearchBarProps> = ({
   </div>
 );
 
-export const SearchBarContainer = () => {
-  const { actions, state } = userSearchContext();
-  return (
-    <SearchBar
-      searchText={state.searchText}
-      handleUpdateSearchText={actions.handleUpdateSearchText}
-    >
-      <LoadingContainer />
-    </SearchBar>
-  );
-};
-
 // ---------------------------- SearchList
 interface ISearchListProps {
   list: ISearchState["list"];
@@ -95,14 +73,11 @@ export const SearchList: React.FC<ISearchListProps> = ({ list }) => (
   </div>
 );
 
-export const SearchListContainer = () => {
-  const { state } = userSearchContext();
-  return <SearchList list={state.list} />;
-};
-
 interface ISearchProps extends ISearchState, ISearchTextHandlers {
   title: string;
 }
+
+// --- SearchComponent
 export const SearchComponent: React.FC<ISearchProps> = props => (
   <div className={"Search"} data-testid="search-container">
     <h2>{props.title}</h2>

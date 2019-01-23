@@ -2,31 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b04e9849-b534-4478-8ae6-537b27de3011" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LoadingContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LoadingMessage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchBarContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchComponentSuspense.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchContainerUseContextSuspense.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SearchListContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PropFlash.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JSearchContainerUserReducer.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LoadingContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadingContainer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchComponentBaseTest.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchComponentClass.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchComponentClass.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchComponentClass.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchComponentClass.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchContainerHooks.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchContainerHooks.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchContainerHooks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchContainerHooks.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchContainerRecompose.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchContainerRecompose.test.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SearchContainerUseContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchContainerUseContext.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchContainerUseState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchContainerUseState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/list-mock.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/list-mock.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/list.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/refactor/Refactor.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/refactor/Refactor.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/refactor/UseEffect_4.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/refactor/UseEffect_4.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/refactor/UseReducer_5.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/refactor/UseReducer_5.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/refactor/UseState_3.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/refactor/UseState_3.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -56,8 +44,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SearchComponent.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="640">
-                  <caret line="100" column="1" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
+                <state relative-caret-position="2156">
+                  <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
                   <folding>
                     <element signature="e#104#145#0" expanded="true" />
                   </folding>
@@ -66,97 +54,25 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SearchListContainer.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="25" selection-start-column="25" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/LoadingContainer.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="353">
-                  <caret line="36" selection-start-line="36" selection-end-line="36" />
-                  <folding>
-                    <element signature="e#200#241#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SearchBarContainer.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="460">
-                  <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SearchComponentClass.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="40">
-                  <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/App.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+                <state relative-caret-position="896">
+                  <caret line="35" selection-start-line="35" selection-end-line="35" />
                   <folding>
-                    <element signature="e#56#75#0" expanded="true" />
+                    <element signature="e#0#43#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/LoadingMessage.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="100">
-                  <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SearchContainerHooks.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+                <state relative-caret-position="560">
+                  <caret line="20" selection-start-line="20" selection-end-line="20" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/list-mock.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="359">
-                  <caret line="69" column="3" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="3" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/RootStateProvider.jsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
                 </state>
               </provider>
             </entry>
@@ -166,10 +82,10 @@
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SearchComponentClass.test.tsx">
+            <entry file="file://$PROJECT_DIR$/src/refactor/Refactor.test.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+                <state relative-caret-position="2100">
+                  <caret line="78" selection-start-line="78" selection-end-line="78" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -178,22 +94,64 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/refactor/Refactor.test.tsx">
+            <entry file="file://$PROJECT_DIR$/src/refactor/SearchComponentFC_1.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="20">
-                  <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+                <state relative-caret-position="280">
+                  <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SearchContainerUseState.tsx">
+            <entry file="file://$PROJECT_DIR$/src/refactor/UseState_2.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1180">
-                  <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+                <state relative-caret-position="644">
+                  <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/refactor/UseState_3.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="896">
+                  <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/refactor/UseReducer_5.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="532">
+                  <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
                   <folding>
-                    <element signature="e#0#51#0" expanded="true" />
+                    <element signature="e#0#26#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/App.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#56#75#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/SearchComponentSuspense.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="168">
+                  <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -201,20 +159,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/SearchContainerUseContext.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/SearchComponentSuspense.tsx">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="3" selection-start-line="3" selection-end-line="19" selection-end-column="2" />
+                <state relative-caret-position="252">
+                  <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -223,10 +169,22 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/SearchContainerUseContextSuspense.jsx">
+            <entry file="file://$PROJECT_DIR$/src/refactor/UseEffect_4.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
+                <state relative-caret-position="370">
+                  <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+                  <folding>
+                    <element signature="e#0#64#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/SearchContainerRecompose.test.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="140">
+                  <caret line="5" selection-start-line="5" selection-end-line="5" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -252,6 +210,9 @@
       <find>useContext</find>
       <find>about</find>
       <find>--- sear</find>
+      <find>data</find>
+      <find>wait</find>
+      <find>update(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -260,9 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/JSearchContainerUserReducer.jsx" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/__mocks__/api.ts" />
         <option value="$PROJECT_DIR$/src/SearchComponent.test.tsx" />
         <option value="$PROJECT_DIR$/src/SearchComponentFC.tsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerUseReducer.tsx" />
@@ -275,7 +233,6 @@
         <option value="$PROJECT_DIR$/src/SearchComponentHooks.tsx" />
         <option value="$PROJECT_DIR$/src/SearchComponentStandard.tsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerFC.test.tsx" />
-        <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/SearchComponent.jsx" />
         <option value="$PROJECT_DIR$/src/search-hooks.ts" />
         <option value="$PROJECT_DIR$/src/RootStateProvider.jsx" />
@@ -289,28 +246,32 @@
         <option value="$PROJECT_DIR$/src/refactor/SearchComponentClassToHooks_5.tsx" />
         <option value="$PROJECT_DIR$/src/refactor/SearchComponentClassToHooks.test.tsx" />
         <option value="$PROJECT_DIR$/src/SearchComponentBaseTest.tsx" />
-        <option value="$PROJECT_DIR$/src/SearchComponent.tsx" />
         <option value="$PROJECT_DIR$/src/refactor/UseState_2.tsx" />
         <option value="$PROJECT_DIR$/src/refactor/UseEffect_4.tsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerHooks.test.tsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerRecompose.test.tsx" />
-        <option value="$PROJECT_DIR$/src/SearchComponentClass.tsx" />
         <option value="$PROJECT_DIR$/src/App.test.tsx" />
-        <option value="$PROJECT_DIR$/src/reducer.ts" />
         <option value="$PROJECT_DIR$/src/refactor/UseReducer_5.tsx" />
         <option value="$PROJECT_DIR$/src/SearchComponentClass.test.tsx" />
-        <option value="$PROJECT_DIR$/src/refactor/Refactor.test.tsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerUseState.tsx" />
-        <option value="$PROJECT_DIR$/src/SearchContainerUseContext.jsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerHooks.tsx" />
         <option value="$PROJECT_DIR$/src/list-mock.ts" />
         <option value="$PROJECT_DIR$/src/LoadingContain.tsx" />
-        <option value="$PROJECT_DIR$/src/App.jsx" />
         <option value="$PROJECT_DIR$/src/SearchBarContainer.tsx" />
         <option value="$PROJECT_DIR$/src/SearchListContainer.tsx" />
         <option value="$PROJECT_DIR$/src/SearchContainerUseContextSuspense.jsx" />
         <option value="$PROJECT_DIR$/src/LoadingMessage.tsx" />
         <option value="$PROJECT_DIR$/src/SearchComponentSuspense.tsx" />
+        <option value="$PROJECT_DIR$/src/refactor/UseState_3.tsx" />
+        <option value="$PROJECT_DIR$/src/reducer.ts" />
+        <option value="$PROJECT_DIR$/src/App.css" />
+        <option value="$PROJECT_DIR$/src/SearchContainerUseContext.jsx" />
+        <option value="$PROJECT_DIR$/src/LoadingContainer.tsx" />
+        <option value="$PROJECT_DIR$/src/PropFlash.tsx" />
+        <option value="$PROJECT_DIR$/src/refactor/Refactor.test.tsx" />
+        <option value="$PROJECT_DIR$/src/SearchComponent.tsx" />
+        <option value="$PROJECT_DIR$/src/SearchComponentClass.tsx" />
+        <option value="$PROJECT_DIR$/src/App.jsx" />
       </list>
     </option>
   </component>
@@ -320,40 +281,16 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="471" />
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
-    <option name="width" value="1209" />
+    <option name="width" value="1011" />
     <option name="height" value="1027" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="hooks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hooks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hooks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hooks" type="462c0819:PsiDirectoryNode" />
-              <item name="coverage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="hooks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="hooks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
@@ -367,7 +304,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
@@ -526,44 +463,50 @@
       <workItem from="1546854103762" duration="61000" />
       <workItem from="1546854180558" duration="16220000" />
       <workItem from="1547112363703" duration="52828000" />
-      <workItem from="1547486385670" duration="3575000" />
+      <workItem from="1547486385670" duration="15041000" />
+      <workItem from="1547565426236" duration="23000" />
+      <workItem from="1547565481078" duration="54000" />
+      <workItem from="1547565560370" duration="2420000" />
+      <workItem from="1547629598950" duration="91000" />
+      <workItem from="1547630017219" duration="92000" />
+      <workItem from="1548103497038" duration="1789000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 17h 59m 01s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 13h 13m 07s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 17h 59m 17s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 13h 18m 48s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 17h 59m 41s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 13h 28m 00s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 09m 49s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 13h 28m 21s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 10m 03s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 13h 28m 58s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 12m 37s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 13h 30m 46s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 13m 38s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 14h 10m 33s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 13m 55s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 14h 11m 27s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 14m 09s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 14h 11m 32s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="All_Tests_Watch - 2019.01.14 at 18h 15m 07s.xml">
+    <history-entry file="All_Tests_Watch - 2019.01.15 at 14h 13m 56s.xml">
       <configuration name="All Tests Watch" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117810000" />
+    <option name="totallyTimeSpent" value="133745000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -575,16 +518,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="471" y="23" width="1209" height="1027" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.30050504" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.22483423" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24968633" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" weight="0.32998747" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3197279" />
-      <window_info anchor="bottom" x="21" y="108" width="984" height="906" id="Run" order="2" sideWeight="0.498779" weight="0.2808552" />
+      <window_info anchor="bottom" x="21" y="108" width="984" height="906" id="Run" order="2" sideWeight="0.498779" weight="0.7531584" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49909583" weight="0.39939025" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -593,7 +535,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="9" weight="0.3292683" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501221" side_tool="true" weight="0.2808552" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991511" visible="true" weight="0.37195122" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4991511" visible="true" weight="0.21768707" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -636,13 +578,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="7837" column="49" selection-start-line="7837" selection-start-column="49" selection-end-line="7837" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -736,13 +671,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchContainerRecompose.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="412">
@@ -781,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/search-hooks.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.test.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -808,158 +729,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#47#83#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchContainerRecompose.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/refactor/UseEffect_4.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="82" column="6" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/refactor/SearchComponentFC_1.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/refactor/UseState_2.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/refactor/UseState_3.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/refactor/UseReducer_5.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RootStateProvider.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchComponentClass.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/refactor/Refactor.test.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchContainerUseState.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchComponentClass.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchContainerHooks.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/list-mock.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="359">
           <caret line="69" column="3" selection-start-line="69" selection-start-column="3" selection-end-line="69" selection-end-column="3" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchContainerUseContext.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SearchComponent.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="100" column="1" selection-start-line="100" selection-start-column="1" selection-end-line="100" selection-end-column="1" />
-          <folding>
-            <element signature="e#104#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#56#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,7 +748,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchBarContainer.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
+        <state>
           <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -981,9 +756,60 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoadingMessage.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PropFlash.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="40" column="4" selection-start-line="40" selection-start-column="4" selection-end-line="40" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoadingContainer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+          <folding>
+            <element signature="e#129#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RootStateProvider.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchContainerUseState.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="59" column="46" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchContainerUseContextSuspense.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="87">
           <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -991,27 +817,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoadingContainer.tsx">
+    <entry file="file://$PROJECT_DIR$/src/reducer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="207">
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
           <folding>
-            <element signature="e#200#241#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#47#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoadingMessage.tsx">
+    <entry file="file://$PROJECT_DIR$/src/search-hooks.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        <state relative-caret-position="184">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchComponent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2156">
+          <caret line="79" column="22" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+          <folding>
+            <element signature="e#104#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchComponentClass.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchContainerHooks.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchComponentClass.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1204">
+          <caret line="46" column="27" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refactor/Refactor.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2100">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refactor/SearchComponentFC_1.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refactor/UseState_2.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refactor/UseState_3.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="896">
+          <caret line="34" column="3" selection-start-line="34" selection-start-column="3" selection-end-line="34" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refactor/UseReducer_5.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="e#56#75#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SearchComponentSuspense.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" selection-start-line="3" selection-end-line="19" selection-end-column="2" />
+        <state relative-caret-position="168">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchContainerUseContext.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/refactor/UseEffect_4.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SearchContainerRecompose.test.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

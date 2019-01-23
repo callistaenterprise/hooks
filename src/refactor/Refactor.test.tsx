@@ -73,8 +73,11 @@ describe("SearchComponent Refactor", () => {
         ) as HTMLInputElement;
         fireEvent.change(searchBarInput, { target: { value: "testuser" } });
         expect(searchBarInput.value).toEqual("testuser");
-        const resetSearchText = getByTestId("reset-icon") as HTMLInputElement;
-        fireEvent.click(resetSearchText);
+        let resetSearchText;
+        await wait(() => {
+          resetSearchText = getByTestId("reset-icon") as HTMLInputElement;
+          fireEvent.click(resetSearchText);
+        });
         expect(searchBarInput.value).toEqual("");
         await wait(() => expect(queryByTestId("item-1")).toBeNull());
       });

@@ -97,12 +97,16 @@ export const searchReducer = (state: ISearchState, action: SearchActions) => {
   switch (action.type) {
     case ESearchActions.UPDATE_SEARCH_TEXT:
       state = { ...state, ...action.payload };
+      break;
     case ESearchActions.REQUEST_SEARCH_LIST:
       state = { ...state, ...action.payload, loading: true };
+      break;
     case ESearchActions.SUCCESS_SEARCH_LIST:
       state = { ...state, ...action.payload, loading: false };
+      break;
     case ESearchActions.FAILURE_SEARCH_LIST:
       state = { ...state, ...action.payload, loading: false };
+      break;
   }
   return state;
 };
