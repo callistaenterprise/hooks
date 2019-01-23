@@ -1,22 +1,10 @@
-import React, { ChangeEvent } from "react";
+import React from "react";
 import * as api from "./api";
 import SearchComponent from "./SearchComponent";
-import { IItem } from "./list-mock";
 
-interface IProps {
-  loading?: boolean;
-}
-
-interface IState {
-  searchText: string;
-  list: IItem[];
-  loading: boolean;
-  error?: string;
-}
-
-class SearchComponentClass extends React.Component<IProps, IState> {
+class SearchComponentClass extends React.Component {
   // --- state
-  constructor(props: IProps) {
+  constructor(props) {
     super(props);
     this.state = {
       searchText: "",
@@ -25,9 +13,10 @@ class SearchComponentClass extends React.Component<IProps, IState> {
       error: undefined
     };
   }
+  state = {searchText:"", loading: false}
 
   // --- behaviour
-  handleUpdateSearchText = (event: ChangeEvent<HTMLInputElement>) => {
+  handleUpdateSearchText = event => {
     this.setState({ searchText: event.target.value });
   };
   handleResetSearchText = () => {
@@ -35,16 +24,13 @@ class SearchComponentClass extends React.Component<IProps, IState> {
   };
 
   // --- lifecycle, side effects
-  componentDidMount(): void {
+  componentDidMount() {
     this.setState({ loading: true });
     api
       .search(this.state.searchText)
       .then(list => this.setState({ list, loading: false }));
   }
-  componentDidUpdate(
-    prevProps: Readonly<IProps>,
-    prevState: Readonly<IState>
-  ): void {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.searchText !== this.state.searchText) {
       this.props.loading !== undefined && this.setState({ loading: true });
       api

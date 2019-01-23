@@ -6,19 +6,15 @@ import SearchContainerUseContext from "./SearchContainerUseContext";
 import SearchContainerUseContextSuspense from "./SearchContainerUseContextSuspense";
 import SearchComponentHooks from "./SearchContainerHooks";
 import SearchComponentClass from "./SearchComponentClass";
-class App extends Component {
-  render() {
-    return (
-      <RootStateProvider>
-        <div className="App">
-          <SearchComponentClass/>
-          <SearchComponentHooks x/>
-          <SearchContainerUseContext />
-          <SearchContainerUseContextSuspense/>
-        </div>
-      </RootStateProvider>
-    );
-  }
-}
+const App = props => (
+  <RootStateProvider>
+    <div className="App">
+      <SearchComponentClass />
+      <SearchComponentHooks />
+      <SearchContainerUseContext />
+      <SearchContainerUseContextSuspense />
+    </div>
+  </RootStateProvider>
+);
 
 export default App;
