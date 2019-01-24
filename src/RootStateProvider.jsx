@@ -21,3 +21,6 @@ const RootStateProvider = props => {
 };
 
 export default RootStateProvider;
+
+
+const Hooks = ({ functional }) => <h1>React gets {functional}</h1>;
