@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import MaterialIcon from "material-icons-react";
 // @ts-ignore
 import MDSpinner from "react-md-spinner";
-import { userSearchContext } from "./search-hooks";
+import { useSearchContext } from "./search-hooks";
 import PropFlash from "./PropFlash";
 
 export const Loading = ({ loading, handleResetSearchText }) => (
@@ -28,7 +28,7 @@ export const LoadingContainer = () => {
   const {
     actions,
     state: { loading }
-  } = userSearchContext();
+  } = useSearchContext();
   console.log("--- flash state", loading);
   return (
     <Loading

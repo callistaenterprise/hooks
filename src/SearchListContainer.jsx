@@ -1,5 +1,5 @@
 import React from "react";
-import { userSearchContext } from "./search-hooks";
+import { useSearchContext } from "./search-hooks";
 const SearchList = ({ list }) => (
   <div data-testid="search-list">
     <ul data-testid="search-list-ul">
@@ -14,7 +14,7 @@ const SearchList = ({ list }) => (
 );
 
 const SearchListContainer = () => {
-  const { state } = userSearchContext();
+  const { state } = useSearchContext();
   return <SearchList list={state.list} />;
 };
 

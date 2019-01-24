@@ -1,20 +1,14 @@
 import React, { useReducer } from "react";
 import { initialState, mapDispatchToHandlers, searchReducer } from "./reducer";
-import { useSearchRequest } from "./search-hooks";
+import { useSearchState } from "./search-hooks";
 
 export const RootStateContext = React.createContext();
 
 const RootStateProvider = props => {
   // --- hooks
-  const [state, dispatch] = useReducer(searchReducer, initialState(props));
-
-  // --- bind mapDispatchToHandlers to dispatch
-  const actions = mapDispatchToHandlers(dispatch);
-
-  // --- side effect
-  useSearchRequest(state, actions);
+  const [state, actions] = useSearchState();
   return (
-    <RootStateContext.Provider value={{ state, actions }}>
+    <RootStateContext.Provider value={{ state, actions, handlers: actions }}>
       {props.children}
     </RootStateContext.Provider>
   );
@@ -22,5 +16,3 @@ const RootStateProvider = props => {
 
 export default RootStateProvider;
 
-
-const Hooks = ({ functional }) => <h1>React gets {functional}</h1>;

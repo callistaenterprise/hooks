@@ -1,5 +1,5 @@
 import React from "react";
-import { userSearchContext } from "./search-hooks";
+import { useSearchContext } from "./search-hooks";
 import { LoadingContainer } from "./LoadingContainer";
 const SearchBar = ({ searchText, handleUpdateSearchText, children }) => (
   <div data-testid="search-bar" className={"SearchContainer"}>
@@ -16,7 +16,7 @@ const SearchBar = ({ searchText, handleUpdateSearchText, children }) => (
 );
 
 const SearchBarContainer = () => {
-  const { actions, state } = userSearchContext();
+  const { actions, state } = useSearchContext();
   return (
     <SearchBar
       searchText={state.searchText}
