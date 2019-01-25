@@ -2,12 +2,14 @@ import React from "react";
 // @ts-ignore
 import "./App.css";
 import RootStateProvider from "./RootStateProvider";
-import SearchComponentClass from "./SearchComponentHooks";
+import SearchComponentHooks from "./SearchComponentHooks";
+import SearchComponentClass from "./SearchComponentClass";
 import SearchComponentContext from "./SearchComponentSuspense";
 const App = props => (
   <RootStateProvider>
     <div className="App">
-      <SearchComponentClass />
+      <SearchComponentClass title={"Search with class"}/>
+      <SearchComponentHooks title={"Search ref"}/>
       <SearchComponentContext title={"Search With context"}/>
     </div>
   </RootStateProvider>

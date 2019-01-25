@@ -43,7 +43,7 @@ class SearchComponentClass extends React.Component {
     const { searchText, list, loading } = this.state;
     return (
       <SearchComponent
-        title={"Phil's-osophies Component"}
+        title={"Phil's-osophies"}
         loading={loading}
         searchText={searchText}
         list={list}

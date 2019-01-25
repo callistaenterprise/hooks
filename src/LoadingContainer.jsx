@@ -18,7 +18,7 @@ export const Loading = ({ loading, handleResetSearchText }) => (
         onClick={handleResetSearchText}
         className={"SearchClear"}
       >
-        <MaterialIcon icon={"clear"} />
+        <MaterialIcon color={"#ffffff"} icon={"clear"} />
       </div>
     )}
   </PropFlash>

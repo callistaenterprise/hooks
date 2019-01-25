@@ -1,51 +1,26 @@
 import React, { useEffect, useReducer, useRef } from "react";
 import SearchComponent from "./SearchComponent";
 import * as api from "./api";
-import { useSearchContext } from "./search-hooks";
+import { useSearchContext, useSearchReducer, useSearchState } from "./search-hooks";
 
-const useSearchState = () => {
-  const [state, setState] = useReducer(
-    (state, newState) => ({ ...state, ...newState }),
-    {
-      searchText: "",
-      list: [],
-      loading: false,
-      error: undefined
-    }
-  );
+/*
+1. functional component
+2. use state reducer
+3. use state in component
+4. use effect
+5. use handlers
+6. use handlers in code
+7. safe setState useRef
+8. refactor out hooks to useSearchState
+9. useContext instead
 
-  const mountRef = useRef(false);
-  useEffect(() => {
-    // component did mount, first time
-    mountRef.current = true;
-    // compoent will unmount, callback
-    return () => (mountRef.current = false);
-  }, []);
-  const safeSetState = (...args) => mountRef.current && setState(...args)
-
-  useEffect(
-    () => {
-      // on mount
-      // when the search text changes
-      safeSetState({ loading: true });
-      api
-        .search(state.searchText)
-        .then(list => safeSetState({ list, loading: false }));
-    },
-    [state.searchText]
-  );
-  const handlers = {
-    handleUpdateSearchText: e => safeSetState({ searchText: e.target.value }),
-    handleResetSearchText: () => safeSetState({ searchText: "" })
-  };
-  return [state, handlers];
-}
-
+ */
 const SearchComponentHooks = props => {
-  const {state, handlers} = useSearchContext();
+  const [state, handlers] = useSearchState();
+
   return (
     <SearchComponent
-      title={"Phil's-osophies Component"}
+      title={"Phil's-osophies Hooks"}
       loading={state.loading}
       searchText={state.searchText}
       list={state.list}
@@ -54,5 +29,4 @@ const SearchComponentHooks = props => {
     />
   );
 };
-
 export default SearchComponentHooks;

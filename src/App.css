@@ -1,14 +1,18 @@
+html {
+  background-color: #282c34;
+}
 .App {
   margin-left: 20px;
   display:flex;
   flex-flow: row wrap;
+  font-family: "Operator Mono";
+  color: orange;
 }
 
 .Search {
   display:flex;
   flex:1;
   flex-direction: column;
-  background-color: white;
   margin: 5px;
   padding: 20px;
   border-radius:5px;
@@ -19,16 +23,15 @@
 .SearchContainer {
   display:flex;
   align-items: center;
-  background-color: white;
   padding: 5px;
   border-radius:5px;
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
   border-color: orange;
 }
 .SearchInput{
   flex: 1;
-  background-color: white;
+  background-color: #bbbbbb;
   padding: 5px;
   border-radius:5px;
   border-width: 1px;
@@ -68,7 +71,7 @@ ul {
   padding: 5px 5px 5px;
   font-size: calc(5px + 2vmin);
   border-radius:5px;
-  border-width: 1px;
+  border-width: 2px;
   border-style: solid;
   border-color: darkcyan;
 }

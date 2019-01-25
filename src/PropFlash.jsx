@@ -27,7 +27,7 @@ const PropFlash = ({ prop, children }) => {
     <Flash
       pose={flashState}
       style={{
-        flex: "0.2 1 0%",
+        flex: "0.18 1 0%",
         alignSelf: "stretch",
         alignItems: "center",
         justifyContent: "center",

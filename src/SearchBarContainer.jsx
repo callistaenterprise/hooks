@@ -16,7 +16,7 @@ const SearchBar = ({ searchText, handleUpdateSearchText, children }) => (
 );
 
 const SearchBarContainer = () => {
-  const { actions, state } = useSearchContext();
+  const { state, actions } = useSearchContext();
   return (
     <SearchBar
       searchText={state.searchText}

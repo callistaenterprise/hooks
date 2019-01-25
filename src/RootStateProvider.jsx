@@ -1,5 +1,4 @@
-import React, { useReducer } from "react";
-import { initialState, mapDispatchToHandlers, searchReducer } from "./reducer";
+import React from "react";
 import { useSearchState } from "./search-hooks";
 
 export const RootStateContext = React.createContext();

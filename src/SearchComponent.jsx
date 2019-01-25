@@ -18,7 +18,7 @@ export const Loading = ({ loading, handleResetSearchText }) => (
         onClick={handleResetSearchText}
         className={"SearchClear"}
       >
-        <MaterialIcon icon={"clear"} />
+        <MaterialIcon color={"#ffffff"} icon={"clear"} />
       </span>
     )}
   </PropFlash>
@@ -56,7 +56,7 @@ export const SearchList = ({ list }) => (
 // --- SearchComponent
 export const SearchComponent = props => (
   <div className={"Search"} data-testid="search-container">
-    <h2>{props.title}</h2>
+    <h2 style={{fontStyle:"italic"}}>{props.title}</h2>
     <SearchBar {...props}>
       <Loading {...props} />
     </SearchBar>
