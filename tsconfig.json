@@ -31,7 +31,7 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "skipLibCheck": false
+    "skipLibCheck":true
   },
   "exclude": [
     "node_modules",

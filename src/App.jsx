@@ -8,9 +8,9 @@ import SearchComponentContext from "./SearchComponentSuspense";
 const App = props => (
   <RootStateProvider>
     <div className="App">
-      <SearchComponentClass title={"Search with class"}/>
-      <SearchComponentHooks title={"Search ref"}/>
-      <SearchComponentContext title={"Search With context"}/>
+       <SearchComponentClass title={"Search with class"} />
+      <SearchComponentHooks title={"Search ref"} />
+       <SearchComponentContext title={"Search With context"} />
     </div>
   </RootStateProvider>
 );

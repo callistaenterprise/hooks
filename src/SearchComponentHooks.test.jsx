@@ -5,7 +5,7 @@ import "jest-dom/extend-expect";
 import SearchComponentHooks from "./SearchComponentHooks";
 import RootStateProvider from "./RootStateProvider";
 
-const SearchComponent = () =><RootStateProvider><SearchComponentHooks/></RootStateProvider>;
+const SearchComponent = props =><RootStateProvider {...props}><SearchComponentHooks {...props}/></RootStateProvider>;
 
 jest.mock("./api", () => ({
   search: jest.fn(searchText =>
@@ -56,6 +56,7 @@ describe("SearchComponent-Refactor", () => {
       it("it shows when loading", () => {
         const { getByTestId } = render(<SearchComponent loading={true} />);
         flushEffects();
+        console.log("********")
         expect(getByTestId("loading-icon")).not.toBeUndefined();
       });
       it("it hides when loading is false", () => {

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useObservable } from "./rxjs-hooks";
 import posed from "react-pose";
+import { map,delay, debounceTime, tap } from "rxjs/operators";
 
 const Flash = posed.div({
   change: { background: "rgba(253, 189, 78, 1)" },
@@ -21,8 +23,22 @@ const useLoadingFlash = loading => {
   );
   return loadingFlashState;
 };
+const useLoadingFlashObservable = loading => {
+  const [loadingFlashState, setLoadingFlashState] = useState("finished");
+  useObservable(
+    input$ =>
+      input$.pipe(
+        tap(() => setLoadingFlashState("change")),
+        debounceTime(500),
+        tap(() => setLoadingFlashState("finished")),
+      ),
+    "finished",
+    [loading] // creates a stream from the changing property
+  );
+  return loadingFlashState;
+};
 const PropFlash = ({ prop, children }) => {
-  const flashState = useLoadingFlash(prop);
+  const flashState = useLoadingFlashObservable(prop);
   return (
     <Flash
       pose={flashState}
